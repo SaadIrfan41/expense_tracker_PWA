@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import 'tailwindcss/tailwind.css'
+import '../styles/tailwind.css'
 import type { AppProps } from 'next/app'
-
+import { GlobalProvider } from '../context/GlobalState'
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <GlobalProvider>
+      <Component {...pageProps} />
+    </GlobalProvider>
+  )
 }
 export default MyApp
